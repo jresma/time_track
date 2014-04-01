@@ -1,4 +1,10 @@
 TimeTrack::Application.routes.draw do
+  get 'login' => 'account#new', :as => :login
+  get "account/create"
+  get "account/destroy"
+
+  post 'logout' => 'account#destroy', :as => :logout
+  resources :account
   resources :projects
 
   # The priority is based upon order of creation: first created -> highest priority.
