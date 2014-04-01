@@ -4,8 +4,14 @@ TimeTrack::Application.routes.draw do
   get "account/destroy"
 
   post 'logout' => 'account#destroy', :as => :logout
+  post 'users/new'
+
   resources :account
+  resources :users
+
   resources :projects
+
+  root 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
